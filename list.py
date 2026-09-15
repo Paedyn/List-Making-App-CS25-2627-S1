@@ -10,16 +10,26 @@ for _ in range(stuff):
 list.append(task)
 print(list)
 more_stuff=(input("Write here:"))
-list.insert[0,more_stuff]
+list.insert(0,more_stuff)
+print(list)
 
-
+search= (int(input('What do you want to search for(Enter 0 for first value, 1 for seconds value)?'))) # FIX
+print(list[search])
+if search in list:
+    print({search})
+    print(len(list))
+   remove= (input(print("Would you like to remove something from the lsit?")))
+   if remove==
 # ##Add at least 3 items.
-# Insert an item somewhere other than the end.
+# ##Insert an item somewhere other than the end.
 # Change an existing item.
+
 # Search for an item that exists.
-# Search for an item that does not exist.
+    # Search for an item that does not exist.
+
 # Remove an item.
-# Display all current items.
+
+# ##Display all current items.
 # Display the current number of items.
 # Undo a change.
 # Handle at least one invalid position without crashing.
