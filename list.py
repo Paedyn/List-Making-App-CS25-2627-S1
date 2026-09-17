@@ -7,7 +7,7 @@ stuff=(int(input("How many tasks would you like?")))
 
 for _ in range(stuff):
     task=(input("List your tasks here!"))
-list.append(task)
+    list.append(task)
 print(list)
 more_stuff=(input("Write here:"))
 list.insert(0,more_stuff)
@@ -16,10 +16,10 @@ print(list)
 search= (int(input('What do you want to search for(Enter 0 for first value, 1 for seconds value)?'))) # FIX
 print(list[search])
 if search in list:
-    print({search})
+    print(search)
     print(len(list))
-   remove= (input(print("Would you like to remove something from the lsit?")))
-   if remove==
+    remove= (input(print("Would you like to remove something from the lsit?")))
+   # if remove==
 # ##Add at least 3 items.
 # ##Insert an item somewhere other than the end.
 # Change an existing item.
