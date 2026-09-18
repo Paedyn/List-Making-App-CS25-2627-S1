@@ -3,29 +3,34 @@ print("press A to add items to list")
 print("press B to insert items to list")
 print("press C to remove items from list")
 print("press D to search list")
-print("E to see all your items on your lsit")
-print("press F to change existing items on your list ")
+print("E to see all your items on your list")
+print("press F to change existing items on your list n")
 print("press G to undo your last change")
+print("press H to see last undo")
+
 
 list = []
-undo_list=[]
+undo_list = []
+last_undo =[]
 
 
 while True:
     start = input("Please enter a letter to start! ")
 
-    # ADD TO LIST-A
+    # ADD-A
     if start == "A":
-        undo_list=list.copy()
+        undo_list = list.copy()
+
         stuff = int(input("How many items would you like? "))
         for _ in range(stuff):
             task = input("List your items here! ")
             list.append(task)
             print(list)
 
-    # INSERT ITEM-B
+    # INSERT-B
     elif start == "B":
         undo_list = list.copy()
+
 
         print("To insert values, you must address them by index.")
         print("Your first value is 0, your second value is 1, and so on.")
@@ -44,6 +49,7 @@ while True:
     elif start == "C":
         undo_list = list.copy()
 
+
         print("To remove values, you must address them by index.")
         print("Your first value is 0, your second value is 1, and so on.")
 
@@ -57,7 +63,7 @@ while True:
             print(list)
  #SEARCH=D
     elif start=="D":
-        print("To insert values, you must address them by index.")
+        print("To search values, you must address them by index.")
         print("Your first value is 0, your second value is 1, and so on.")
         search=(int(input("What index you like to search for?")))
         if search < 0 or search >= len(list):
@@ -71,7 +77,8 @@ while True:
 
     elif start=="F":
         undo_list = list.copy()
-        print("To insert values, you must address them by index.")
+
+        print("To replace values, you must address them by index.")
         print("Your first value is 0, your second value is 1, and so on.")
         change=(int(input("What index would you like to replace?")))
 
@@ -82,9 +89,21 @@ while True:
             list[change] = new_value
             print("Item changed!")
             print(list)
-#UNDO LAST CHANGE
+
 
     elif start == "G":
-        list = undo_list.copy()
-        print("Undo successful!")
-        print(list)
+        if undo_list == []:
+            print("Nothing to undo!")
+        else:
+            last_undo = list.copy()
+            list = undo_list.copy()
+            print("Undo complete!")
+            print(list)
+
+
+    elif start == "H":
+        if last_undo == []:
+            print("No undo history yet!")
+        else:
+            print("Here is the list before your last undo:")
+            print(last_undo)
