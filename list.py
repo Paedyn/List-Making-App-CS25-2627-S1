@@ -7,6 +7,7 @@ print("E to see all your items on your list")
 print("press F to change existing items on your list n")
 print("press G to undo your last change")
 print("press H to see last undo")
+print("Press I to leave this application")
 
 
 list = []
@@ -63,17 +64,19 @@ while True:
             print(list)
  #SEARCH=D
     elif start=="D":
-        print("To search values, you must address them by index.")
-        print("Your first value is 0, your second value is 1, and so on.")
-        search=(int(input("What index you like to search for?")))
-        if search < 0 or search >= len(list):
-           print('Index not ofund!')
+        print("To search values,please enter their correct spelling!")
+        search=(input("What would you like to search for?"))
+        if search in list:
+            print(f"{search} is in the list!")
         else:
-            print(f"At this index, you have written:{list[search]}")
+            print(f"{search} is not in the list!")
+
     # #ASK MR. FORSYTH
     elif start=="E":
         print("Here is your current list!")
         print(list)
+        print("Your list has this many values:")
+        print(len(list))
 
     elif start=="F":
         undo_list = list.copy()
@@ -107,3 +110,8 @@ while True:
         else:
             print("Here is the list before your last undo:")
             print(last_undo)
+
+    elif start== "I":
+        print("You have now left this application. You cannot edit this code unless you start over!")
+        break
+
